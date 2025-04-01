@@ -26,7 +26,6 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
         secret_names = [
             "AIRTABLE-API-KEY",
             "AIRTABLE-BASE-ID",
-            "DATABASE_CONNECTION",
             "AIRTABLE-MILEAGE-TABLE-NAME",
             "GOOGLE-MAPS-API-KEY",
             "START-ADDRESS",
