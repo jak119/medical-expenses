@@ -1,6 +1,7 @@
 import os
 from pyairtable import Api
 from common import GoogleMapsDistanceCalculator
+import logging
 
 
 # Load environment variables
@@ -76,7 +77,7 @@ def main():
             # Update Airtable if changes exist
             if changes:
                 # changes['Deliverability'] = verified['deliverability']
-                print(f"Updating record {record_id} with changes: {changes}")
+                logging.info(f"Updating record {record_id} with changes: {changes}")
                 airtable.update(record_id, changes)
 
 
