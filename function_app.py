@@ -29,6 +29,7 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
             "DATABASE_CONNECTION",
             "AIRTABLE-MILEAGE-TABLE-NAME",
             "GOOGLE-MAPS-API-KEY",
+            "START-ADDRESS",
         ]
         get_secrets_from_vault(secret_names)
 

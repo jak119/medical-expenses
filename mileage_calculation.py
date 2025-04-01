@@ -31,6 +31,7 @@ def main():
     AIRTABLE_BASE_ID = os.getenv("AIRTABLE-BASE-ID")
     AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE-MILEAGE-TABLE-NAME")
     GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE-MAPS-API-KEY")
+    START_ADDRESS = os.getenv("START-ADDRESS")
 
     airtable_api = Api(AIRTABLE_API_KEY)
     airtable_base = airtable_api.base(AIRTABLE_BASE_ID)
@@ -56,7 +57,7 @@ def main():
         address = fields.get("Office Address")
 
         # Calculate Mileage
-        start_address = "210 Bartholomew St, Peabody, MA"
+        start_address = START_ADDRESS
         end_address = address[0]
         client = GoogleMapsDistanceCalculator(GOOGLE_MAPS_API_KEY)
         to_mileage_value = client.calculate_distance(
