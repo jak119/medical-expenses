@@ -37,3 +37,13 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
 
     calculate_mileage()
     logging.info("Mileage calculation completed successfully.")
+
+
+@app.timer2(
+    schedule="0 12 */12 * * *",
+    arg_name="secondtimer",
+    run_on_startup=False,
+    use_monitor=True,
+)
+def timer2(secondtimer: func.TimerRequest) -> None:
+    logging.info("Second timer executed.")
